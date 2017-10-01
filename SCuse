@@ -1,0 +1,8 @@
+Import('env')
+
+lib = env.Program(env.DkName("main"), [])
+env.Ignore(".", lib)
+
+env.AppendUnique(CPPPATH=[env.Dir(".").abspath])
+env.AppendUnique(LIBPATH=[env.inst_lib_dir()])
+#env.AppendUnique(LIBS=[lib[0].name])
